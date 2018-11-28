@@ -5,10 +5,8 @@ import { withStyles } from '@material-ui/core/styles';
 import UserList from './UserList/UserList';
 import LoginContol from './LoginControl/LoginControl';
 import ProtoForm from './Form/ProtoForm';
-
 import Clock from './Clock';
 import './App.css';
-
 
 class App extends Component {
 
@@ -28,7 +26,6 @@ class App extends Component {
       </div>
     );
   }
-
 }
 
 export default App;
