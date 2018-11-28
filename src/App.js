@@ -12,16 +12,31 @@ class App extends Component {
 
   constructor(props) {
     super(props);
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
+
     this.state = {isLoggedIn: false};
+  }
+
+  handleLoginClick() {
+    this.setState({isLoggedIn: true});
+  }
+
+  handleLogoutClick() {
+    this.setState({isLoggedIn: false});
   }
 
   render() {
     return (
       <div className="App">
-        <Clock  loginState={this.state.isLoggedIn}/>
-        <UserList   loginState={this.state.isLoggedIn}/>
-        <LoginContol loginState={this.state.isLoggedIn}/>
-        <ProtoForm   loginState={this.state.isLoggedIn}/>
+        <LoginContol isLoggedIn={this.state.isLoggedIn}
+          onHandleLoginClick={this.handleLoginClick}
+          onHandleLogoutClick={this.handleLogoutClick}
+          />
+
+        <Clock  isLoggedIn={this.state.isLoggedIn}/>
+        <UserList   isLoggedIn={this.state.isLoggedIn}/>
+        <ProtoForm   isLoggedIn={this.state.isLoggedIn}/>
 
       </div>
     );

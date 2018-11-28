@@ -66,13 +66,12 @@ class UserList extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {isLoggedIn :props.isLoggedIn};
   }
 
 
   render() {
     const { classes } = this.props;
-    const isLoggedIn = this.state.isLoggedIn;
+    const isLoggedIn = this.props.isLoggedIn;
     if(!isLoggedIn){
       return null;
     }

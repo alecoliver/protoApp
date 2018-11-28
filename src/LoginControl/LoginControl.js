@@ -9,21 +9,20 @@ class LoginControl extends Component {
     super(props);
     this.handleLoginClick = this.handleLoginClick.bind(this);
     this.handleLogoutClick = this.handleLogoutClick.bind(this);
-    this.state = {isLoggedIn: props.isLoggedIn};
   }
 
 
 
   handleLoginClick() {
-    this.setState({isLoggedIn: true});
+    this.props.onHandleLoginClick(true);
   }
 
   handleLogoutClick() {
-    this.setState({isLoggedIn: false});
+    this.props.onHandleLogoutClick(false);
   }
 
   render() {
-    const isLoggedIn = this.state.isLoggedIn;
+    const isLoggedIn = this.props.isLoggedIn;
     let button;
 
     if (isLoggedIn) {

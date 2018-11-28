@@ -29,7 +29,7 @@ class Clock extends Component {
     const { classes } = props;
     const bull = <span className={classes.bullet}>•</span>;
     super(props);
-    this.state = {date: new Date(), isLoggedIn :props.isLoggedIn};
+    this.state = {date: new Date()};
   }
 
   componentDidMount() {
@@ -50,11 +50,11 @@ class Clock extends Component {
   }
 
   render() {
-    const isLoggedIn = this.state.isLoggedIn;
+    const isLoggedIn = this.props.isLoggedIn;
     if(!isLoggedIn){
       return null;
     }
-    
+
     return (
       <div>
       <i className="fas fa-clock"></i>

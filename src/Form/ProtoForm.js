@@ -65,14 +65,10 @@ class ProtoForm extends Component {
     super(props);
   }
 
-  componentDidMount(props) {
-    this.setState({isLoggedIn : this.props.isLoggedIn});
-  }
-
   render() {
     const { classes } = this.props;
 
-    const isLoggedIn = this.state.isLoggedIn;
+    const isLoggedIn = this.props.isLoggedIn;
     if(!isLoggedIn){
       return null;
     }
